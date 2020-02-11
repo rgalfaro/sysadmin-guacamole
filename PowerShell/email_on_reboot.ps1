@@ -5,7 +5,7 @@
 $host_name = $env:COMPUTERNAME
 $recipient = "rodrigo.alfaro@dxc.com", "prasad.r@dxc.com", "gaurav.srivastava@dxc.com", "soumitra.padhi@dxc.com"
 $from = "no_reply@dxc.com"
-$subject = "Computer $host_name has rebooted at $(Get-Date)"
+$subject = "Server $host_name has rebooted at $(Get-Date)"
 $body= "$subject, if this was an unxpected reboot, please login into the server at $host_name.lab.ab.elabs.svcs.entsvcs.net and check for issues."
 $smtp_server = "smtp.svcs.entsvcs.com"
 
