@@ -3,10 +3,10 @@
 # Rodrigo Alfaro - 02/11/2020
 
 $host_name = $env:COMPUTERNAME
-$e_recipient
-$e_from
-$e_subject = "Computer $host_name has rebooted at $(Get-Date)"
-$e_body= "$e_subject, if this was an unxpected reboot, please login into the server at $host_name.lab.ab.elabs.svcs.entsvcs.net and check for issues."
-$e_smtp_server = ""
+$recipient = "rodrigo.alfaro@dxc.com"
+$from = "no_reply@dxc.com"
+$subject = "Computer $host_name has rebooted at $(Get-Date)"
+$body= "$subject, if this was an unxpected reboot, please login into the server at $host_name.lab.ab.elabs.svcs.entsvcs.net and check for issues."
+$smtp_server = "smtp.svcs.entsvcs.com"
 
-Send-MailMessage -to $e_recipient -Subject $e_subject -Body $e_body -From $e_from -SmtpServer $e_smtp_server
+Send-MailMessage -to $recipient -Subject $subject -Body $body -From $from -SmtpServer $smtp_server
