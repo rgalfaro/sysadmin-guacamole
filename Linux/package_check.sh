@@ -15,12 +15,12 @@
 
 # Creating funcition get_kd
 get_kd() { 
-if grep -q ^NAME="SLES" /etc/os-release; then # Checks if OS is SUSE
+if grep -q '^NAME="SLES"' /etc/os-release; then # Checks if OS is SUSE
 echo " -->>> OS is SuSE Linux in `hostname`"
 	# Uses zypper to check for package kernel-devel and prints message if package is installed or not
   zypper info kernel-devel 2> /dev/null | grep -e Name -e Installed -e Status && echo "kenel-devel INSTALLED" || echo " --XXX kernel devel is NOT INSTALLED"
   return 0
-elif grep -q ^NAME="Red Hat" /etc/os-release; then # If OS is NOT SUSE, checks if RHEL
+elif grep -q '^NAME="Red Hat"' /etc/os-release; then # If OS is NOT SUSE, checks if RHEL
   echo " -->>> OS is Red Hat Entreprise Linux in `hostname`"
   # Uses rpm to check for package kernel-devel and prints message if package is installed or not
   rpm -qa | grep -iq kernel-devel && echo "kenel-devel INSTALLED" || echo " --XXX kernel devel is NOT INSTALLED"
