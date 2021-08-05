@@ -1,0 +1,5 @@
+# Copy files from host to guest -LocalToGuest
+Copy-VMGuestFile -Source c:\test.txt -Destination c:\temp\ -VM myVM -LocalToGuest -HostUser root -HostPassword pass1 -GuestUser user -GuestPassword pass2
+
+#Copy files from guest to hosts -GuestToLocal
+Copy-VMGuestFile -Source c:\test.txt -Destination c:\temp\ -VM myVM -GuestToLocal -HostUser root -HostPassword pass1 -GuestUser user -GuestPassword pass2
